@@ -1,22 +1,75 @@
-# CI_CD_Pipeline
-The goal of this DevOps mini project is to create a CI/CD pipeline for a web application. The pipeline will automate the build, testing, and deployment processes, ensuring a consistent and efficient workflow for the development team. Here are the key components of the CI/CD pipeline:<br>
+# java-gradle-starter-project
 
-1. Version Control: The project will utilize a version control system (e.g., Git) to manage the source code and track changes. Developers will collaborate and push their code to a central repository.<br>
+Here is a starter project for the ArcGIS Maps SDK for Java with Gradle. 
 
-2. Branching Strategy: A branching strategy (e.g., GitFlow) will be adopted to manage different stages of development. Feature branches will be used for implementing new features, while release branches will facilitate preparing the application for deployment.<br>
+The project includes the Gradle wrapper, so there is no need to install Gradle to run the app.
 
-3. Continuous Integration: Whenever changes are pushed to the main development branch, the CI/CD pipeline will be triggered automatically. The pipeline will build the application from the source code, execute unit tests, and perform static code analysis to ensure code quality.<br>
+The app launches a window displaying a map.
 
-4. Automated Testing: The pipeline will include various automated tests, such as unit tests, integration tests, and possibly end-to-end tests. These tests will verify the functionality, performance, and reliability of the application, ensuring that new code does not introduce regressions.<br>
+![screenshot](screenshot.png)
 
-5. Artifact Generation: After a successful build and testing process, the pipeline will generate artifacts (e.g., compiled code, deployable packages) that are ready for deployment.<br>
+## Instructions
 
-6. Environment Provisioning: The pipeline will automate the provisioning of necessary environments for testing and deployment. This may include creating virtual machines, containers, or using cloud-based services to replicate production-like environments.<br>
+### IntelliJ IDEA
 
-7. Deployment Automation: The pipeline will automate the deployment process, deploying the application to different environments (e.g., development, staging, production) based on predefined configurations. Deployment scripts or tools (e.g., Kubernetes, AWS Elastic Beanstalk) will be used to ensure consistency and repeatability.<br>
+1. Open IntelliJ IDEA and select _File > Open..._.
+2. Choose the java-gradle-starter-project directory and click _OK_.
+3. Select _File > Project Structure..._ and ensure that the Project SDK and language level are set to use Java 11.
+4. Open the Gradle view with _View > Tool Windows > Gradle_.
+5. In the Gradle view, double-click `copyNatives` under _Tasks > build_. This will unpack the native library dependencies to $USER_HOME/.arcgis.
+6. In the Gradle view, double-click `run` under _Tasks > application_ to run the app.
 
-8. Continuous Monitoring: Monitoring and logging mechanisms will be integrated into the pipeline to track the health and performance of the application. This will enable the team to identify and address any issues promptly.<br>
+### Eclipse
 
-9. Notification and Collaboration: The pipeline will provide notifications and alerts to the development team, allowing them to stay informed about the status of builds, tests, and deployments. Collaboration tools (e.g., Slack, Microsoft Teams) may be integrated to facilitate communication and collaboration among team members.<br>
+1. Open Eclipse and select _File > Import_.
+2. In the import wizard, choose _Gradle > Existing Gradle Project_, then click _Next_.
+3. Select the java-gradle-starter-project directory as the project root directory.
+4. Click _Finish_ to complete the import.
+5. Select _Project > Properties_ . In _Java Build Path_, ensure that under the Libraries tab, _Modulepath_ is set to JRE System Library (JavaSE-11). In _Java Compiler_, ensure that the _Use compliance from execution environment 'JavaSE-11' on the 'Java Build Path'_ checkbox is selected.
+6. Right-click the project in the Project Explorer or Package Explorer and choose _Gradle > Refresh Gradle project_.
+7. Open the Gradle Tasks view with _Window > Show View > Other... > Gradle > Gradle Tasks_.
+8. In the Gradle Tasks view, double-click `copyNatives` under _java-gradle-starter-project > build_. This will unpack the native library dependencies to $USER_HOME/.arcgis.
+9. In the Gradle Tasks view, double-click `run` under _java-gradle-starter-project > application_ to run the app.
 
-10. Continuous Improvement: The pipeline will be continuously reviewed and improved based on feedback from the development team and stakeholders. The team will identify areas for optimization, such as reducing build times, increasing test coverage, or streamlining the deployment process.<br>
+### Command Line
+
+1. `cd` into the project's root directory.
+2. Run `./gradlew clean build` on Linux/Mac or `gradlew.bat clean build` on Windows.
+3. Run `./gradlew copyNatives` on Linux/Mac or `gradlew.bat copyNatives` on Windows. This will unpack the native library dependencies to $USER_HOME.arcgis.
+4. Run `./gradlew run` on Linux/Mac or `gradlew.bat run` on Windows to run the app.
+
+## Requirements
+
+See the Java Maps SDK [system requirements](https://developers.arcgis.com/java/reference/system-requirements/).
+
+## Resources
+
+* [ArcGIS Maps SDK for Java](https://developers.arcgis.com/java/)  
+* [ArcGIS Blog](https://www.esri.com/arcgis-blog/developers/)  
+* [Esri Twitter](https://twitter.com/arcgisdevs)  
+
+## Issues
+
+Find a bug or want to request a new feature?  Please let us know by submitting an issue.
+
+## Contributing
+
+Esri welcomes contributions from anyone and everyone. Please see our [guidelines for contributing](https://github.com/esri/contributing).
+
+## Licensing
+
+Copyright 2023 Esri
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not 
+use this file except in compliance with the License. You may obtain a copy 
+of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software 
+distributed under the License is distributed on an "AS IS" BASIS, WITHOUT 
+WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the 
+License for the specific language governing permissions and limitations 
+under the License.
+
+A copy of the license is available in the repository's license.txt file.
